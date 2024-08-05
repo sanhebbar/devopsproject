@@ -1,8 +1,10 @@
 pipeline{
-    agent any
+    agent{
+        label 'qa'
+    }
     
         stages{
-            stage('Build-System details'){
+            stage('Build details'){
                 steps{
                     sh '''
                     echo '"SYSTEM DETAILS"'
@@ -10,7 +12,7 @@ pipeline{
                     '''
                 }
             }
-            stage('Build-Memory details'){
+            stage('Build-Memory'){
                 steps{
                     sh '''
                     echo "MEMORY DETAILS"
